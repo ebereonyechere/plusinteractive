@@ -37,7 +37,7 @@ class AuthenticatedSessionController extends Controller
 
         try {
             $ipData =
-                Http::get('http://ip-api.com/json/' . '1.1.1.1')->json();
+                Http::get('http://ip-api.com/json/' . $request->ip())->json();
 
             if ($ipData['status'] === 'success') {
 
